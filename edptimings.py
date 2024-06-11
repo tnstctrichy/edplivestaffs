@@ -135,7 +135,7 @@ table_data_font = 'Arial, sans-serif'
 
 # Title and subtitle
 st.markdown(
-    f'<h1 style="color:{title_color};">Dashboard</h1>',
+    f'<h1 style="color:{title_color};">EDP Dashboard</h1>',
     unsafe_allow_html=True
 )
 st.markdown(
@@ -212,6 +212,8 @@ else:
             shifts = fetch_all_shifts()
             if shifts:
                 df = pd.DataFrame(shifts, columns=['ID', 'Date', 'Branch', 'Staff Name', 'Staff Number', 'Mobile Phone', 'Shift Timing', 'Timestamp'])
+                df['Timestamp'] = pd.to_datetime(df['Timestamp']).dt.tz_localize('UTC').dt.tz_convert('Asia/Kolkata')
+                df['Timestamp'] = df['Timestamp'].dt.strftime('%d-%m-%Y %H:%M:%S')               
                 df['Date'] = pd.to_datetime(df['Date'], errors='coerce').dt.strftime('%d-%m-%Y')
 
                 # Display the data table with enhanced alignment and design
@@ -224,3 +226,14 @@ else:
                 ]).set_properties(**{'text-align': 'center', 'border-collapse': 'collapse', 'border': '1px solid #cccccc'}))
             else:
                 st.write('No shifts found.')
+footer_html = """
+<footer style="position: fixed; bottom: 0; width: 100%; background-color: #004225; color: #ffffff; padding: 20px 0; text-align: center; font-family: Arial, sans-serif;">
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <div style="flex-grow: 1;">
+            <p style="margin: 0;">Copyright © 2024 Tamil Nadu State Transport Corporation (KUM) Ltd., Trichy Region. All rights reserved.</p>
+            <p style="margin: 0;">Designed & Maintained by Thiru.K.Satheesh kumar MCA.,</p>
+        </div>      
+    
+</footer>
+"""
+st.markdown(footer_html, unsafe_allow_html=True)
