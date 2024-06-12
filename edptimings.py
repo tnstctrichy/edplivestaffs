@@ -4,6 +4,8 @@ from datetime import datetime
 import hashlib
 import pandas as pd
 import pytz
+from st_aggrid import AgGrid, GridOptionsBuilder
+import time
 
 def get_current_time():
     IST = pytz.timezone('Asia/Kolkata')
@@ -124,7 +126,8 @@ def fetch_all_shifts():
             conn.close()
 
 # Set the Streamlit app to wide mode
-st.set_page_config(layout="wide")
+st.set_page_config(layout="wide", page_title="EDP Shift Management", page_icon="🕒")
+
 
 # Define colors and fonts for styling
 title_color = '#1f77b4'  # Blue
@@ -230,7 +233,7 @@ footer_html = """
 <footer style="position: fixed; bottom: 0; width: 100%; background-color: #004225; color: #ffffff; padding: 20px 0; text-align: center; font-family: Arial, sans-serif;">
     <div style="display: flex; justify-content: center; align-items: center;">
         <div style="flex-grow: 1;">
-            <p style="margin: 0;">Copyright © 2024 Tamil Nadu State Transport Corporation (KUM) Ltd., Trichy Region. All rights reserved.</p>
+            <p style="margin: 0;">Copyright © 2024 Tamil Nadu State Transport Corporation (KUM) Ltd., Trichy Region.</p>
             <p style="margin: 0;">Designed & Maintained by Thiru.K.Satheesh kumar MCA.,</p>
         </div>      
     
