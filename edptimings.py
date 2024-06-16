@@ -230,12 +230,54 @@ else:
             else:
                 st.write('No shifts found.')
 footer_html = """
-<footer style="position: fixed; bottom: 0; width: 100%; background-color: #004225; color: #ffffff; padding: 20px 0; text-align: center; font-family: Arial, sans-serif;">
-    <div style="display: flex; justify-content: center; align-items: center;">
-        <div style="flex-grow: 1;">
-            <p style="margin: 0;">Copyright © 2024 Tamil Nadu State Transport Corporation (KUM) Ltd., Trichy Region.</p>
-            <p style="margin: 0;">Designed & Maintained by Thiru.K.Satheesh kumar MCA.,</p>
+<style>
+    .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #004225;
+        color: #ffffff;
+        padding: 10px 0;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        font-size: 0.9em;
+        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+        border-top: 3px solid #ffcc00;
+    }
+    .footer-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer-content {
+        flex-grow: 1;
+        margin: 0 15px;
+    }
+    .footer p {
+        margin: 5px 0;
+    }
+    .footer p:first-child {
+        font-weight: bold;
+    }
+    .footer a {
+        color: #ffcc00;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .footer a:hover {
+        text-decoration: underline;
+    }
+</style>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <p>Copyright © 2024 Tamil Nadu State Transport Corporation (KUM) Ltd., Trichy Region</p>
+            <p>Designed & Maintained by <a>Thiru.K.Satheesh Kumar MCA.,</a></p>
         </div>      
+    </div>
+</footer>
+"""
+st.markdown(footer_html, unsafe_allow_html=True)   
     
 </footer>
 """
