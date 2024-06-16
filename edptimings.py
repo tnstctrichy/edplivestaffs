@@ -146,7 +146,7 @@ st.markdown(
     'Tamil Nadu State Transport Corporation (KUM) Ltd., Trichy Region</h3>',
     unsafe_allow_html=True
 )
-st.subheader('EDP Shift Management')
+st.subheader('Branch EDP Staffs Shift Management System')
 
 # Login form
 if 'username' not in st.session_state:
