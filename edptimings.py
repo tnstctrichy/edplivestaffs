@@ -49,7 +49,7 @@ def create_database():
         for branch in branches:
             try:
                 c.execute('INSERT INTO users (username, password, role) VALUES (?, ?, ?)', 
-                        (branch, hash_password(branch + '123'), 'user'))
+                        (branch, hash_password(branch+'123'), 'user'))
             except sqlite3.IntegrityError:
                 pass # Ignore if user already exists
         
