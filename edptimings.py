@@ -273,7 +273,7 @@ footer_html = """
     <div class="footer-container">
         <div class="footer-content">
             <p>Copyright © 2024 Tamil Nadu State Transport Corporation (KUM) Ltd., Trichy Region</p>
-            <p>Designed & Maintained by <a>Thiru.K.Satheesh Kumar MCA.,</a></p>
+            <p>Designed & Maintained by <a>EDP Section, Trichy Region</a></p>
         </div>      
     </div>
 </footer>
